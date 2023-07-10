@@ -1,0 +1,20 @@
+.card {
+    width: 300px;
+    height: 420px;
+    padding-inline: 30px;
+    background-color: $gray;
+    border-radius: $base-border-radius;
+    @extend %align-center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    &-text {
+        margin-block: 20px;
+    }
+
+    &-btn {
+        color: $white;
+        background-color: $black;
+    }
+}
