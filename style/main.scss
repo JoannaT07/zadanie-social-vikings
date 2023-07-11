@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Smooch+Sans:wght@400;500;700&display=swap");
+// W tym przypadku dla przycisków (button) i kart (card) przyjęłam stałe szerokości i wysokości w px, 
+// aby jak najlepiej odzwierciedlić wygląd danej stronki.
+
 @import "variables";
 @import "navbar";
 @import "card";
@@ -10,8 +12,7 @@
 
 %grid {
   display: grid;
-  gap: 40px;
-  padding: 0 40px;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -19,7 +20,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
+  font-family: $primary-font-family;
   text-decoration: none;
   outline: none;
   border: none;
@@ -27,23 +28,19 @@
 }
 
 h1 {
-  font-size: 40px;
+  font-size: $font-size-xl;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: $font-size-lg;
   font-weight: 700;
-}
-
-p {
-  font-size: 16px;
-  font-weight: 400;
 }
 
 a {
-  font-family: "Smooch Sans", sans-serif;
+  font-family: $secondary-font-family;
   font-weight: 700;
+  cursor: pointer;
 }
 
 img {
@@ -54,46 +51,49 @@ img {
 button {
   width: 163px;
   height: 45px;
-  font-size: 20px;
+  font-size: $font-size-sm;
   @extend %align-center;
   justify-content: center;
-  font-family: "Smooch Sans", sans-serif;
+  font-family: $secondary-font-family;
   font-weight: 700;
   border-radius: $base-border-radius;
   cursor: pointer;
 }
 
+button:hover {
+  background-color: $hover;
+}
+
+header,
 section {
   margin-inline: auto;
   width: min(90%, 90rem);
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 4rem;
-  padding: 0 40px;
-  align-items: center;
 }
 
 .text-img {
   @extend %grid;
   grid-template-columns: 1fr 1fr;
-  margin-block: 240px 40px;
-  padding-inline: 20px;
+  margin-top: 9rem;
 
   .text {
     text-align: center;
 
     .headling {
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
     }
   }
 
+  .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .cards {
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  margin-block: 160px;
+  @extend %align-center;
+  justify-content: space-between;
+  margin-block: 9rem 12rem;
 }
 
 footer {
@@ -102,7 +102,7 @@ footer {
   @extend %align-center;
   justify-content: center;
 
-  p{
+  p {
     font-weight: 500;
   }
 }
@@ -110,22 +110,19 @@ footer {
 @media (max-width: 1200px) {
   .cards {
     flex-direction: column;
+    gap: 2.5rem;
+    margin-block: 6rem;
   }
 }
 
 @media (max-width: 920px) {
-  section {
-    width: 100%;
-    padding-inline: 5px;
-    // margin: 0;
-  }
   .text-img {
     display: flex;
     flex-direction: column-reverse;
-    margin-block: 100px 80px;
+    margin-top: 6rem;
 
     .headling {
-      font-size: 24px;
+      font-size: 1.5rem;
     }
   }
 }

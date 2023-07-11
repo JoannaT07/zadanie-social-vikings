@@ -1,4 +1,15 @@
-@import "variables";
+.links,
+.dropdown-menu {
+  a {
+    font-size: $font-size-sm;
+    margin: 0 1rem;
+    color: $white;
+
+    &:hover {
+      color: $hover;
+    }
+  }
+}
 
 .header {
   position: relative;
@@ -11,88 +22,61 @@
     top: 0;
     left: 0;
     margin: auto;
-    padding: 2rem 3%;
+    padding: 2rem 4%;
     justify-content: space-between;
     @extend %align-center;
     background-color: $black;
     z-index: 10;
 
     .logo {
+      font-size: $font-size-lg;
       color: $white;
-      cursor: pointer;
-      font-size: 36px;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 0 1rem;
-      font-size: 1.2rem;
-      color: $white;
-
-      &:hover {
-        color: $gray;
-      }
     }
   }
 }
 
 .toggle-btn {
-  top: 0.75rem;
-  right: 1rem;
   display: none;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: end;
-  width: 30px;
-  height: 21px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
 
   .bar {
-    height: 3px;
+    height: 4px;
     background-color: $white;
-    border-radius: 10px;
+    border-radius: $base-border-radius;
   }
 
   .bar:first-child {
-    width: 100%;
+    width: 75%;
   }
 
   .bar:nth-child(2) {
-    width: 70%;
+    width: 55%;
   }
   .bar:last-child {
-    width: 40%;
+    width: 35%;
   }
 }
 
 .dropdown-menu {
-  position: absolute;
+  display: none;
+  position: fixed;
   top: 0;
   left: 0;
   opacity: 1;
-  display: none;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 10rem 0;
+  padding: 5rem 0;
   width: 100vw;
   height: 100vh;
   font-size: 1.8rem;
   color: $white;
   background-color: $black;
-
-  a {
-    padding-block: 1.5rem;
-    display: flex;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-  }
-
-  .action-btn {
-    background-color: $white;
-    color: $black;
-  }
 }
 
 .show {
@@ -109,5 +93,11 @@
     .toggle-btn {
       display: flex;
     }
+  }
+}
+
+@media (min-width: 620px) {
+  .dropdown-menu {
+    display: none;
   }
 }

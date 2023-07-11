@@ -1,20 +1,25 @@
 .card {
-    width: 300px;
-    height: 420px;
-    padding-inline: 30px;
-    background-color: $gray;
-    border-radius: $base-border-radius;
-    @extend %align-center;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  width: 300px;
+  height: 420px;
+  padding-inline: 1.85rem;
+  background-color: $gray;
+  border-radius: $base-border-radius;
+  @extend %align-center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 
-    &-text {
-        margin-block: 20px;
-    }
+  &-headling {
+    font-family: $secondary-font-family;
+    font-weight: $font-bold;
+  }
 
-    &-btn {
-        color: $white;
-        background-color: $black;
-    }
+  &-text {
+    margin-block: 1.2rem;
+  }
+
+  &-btn {
+    color: $white;
+    background-color: $black;
+  }
 }
